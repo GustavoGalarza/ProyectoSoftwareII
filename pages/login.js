@@ -6,7 +6,6 @@ function LoginPage() {
     const { data: session, status } = useSession()
     const router = useRouter()
 
-    
 
     if (status !== 'loading...' && status === 'authenticated') {
         router.push('/')
