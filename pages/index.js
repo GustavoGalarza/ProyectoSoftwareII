@@ -1,11 +1,16 @@
+import Link from "next/link";
+import Layout from "../components/Layout";
 import { getSession, signOut } from "next-auth/react"
+
 
 function HomePage({session}) {
   
   return (
+    <Layout>
     <div>
       {
         session ? (
+
           <div>
             <h1>{session.user.name}</h1>
             <p>{session.user.email}</p>
@@ -19,6 +24,7 @@ function HomePage({session}) {
        logout
       </button>
     </div>
+    </Layout>
   )
 }
 export const getServerSideProps =async(context) =>{
